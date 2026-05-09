@@ -1,82 +1,129 @@
-TP1 — Tests Unitaires avec JUnit 5
-Bugs détectés et corrections
-Exercice 1 — Classe Palindrome
-Bug détecté
+# 🚀 TP1 — Java Testing & Coverage Project
 
-Une erreur était présente dans la boucle while : les indices i et j étaient mal mis à jour.
+## 📌 Overview
 
-Code incorrect :
+This project contains a collection of Java exercises and automated tests focused on:
 
-i--;
-j++;
+* Line Coverage
+* Branch Coverage
+* Condition Coverage
+* Algorithm validation
+* Unit testing practices
 
-Correction :
+The project was developed using Java and Maven in order to demonstrate different software testing techniques and code quality verification.
 
-i++;
-j--;
+---
 
-Le problème a été corrigé dans Exo1Correction.java.
+# 📂 Project Structure
 
-Remarque
+```text
+TP1/
+│
+├── src/
+│   ├── main/java/org/example/
+│   │   ├── Anagram.java
+│   │   ├── BinarySearch.java
+│   │   ├── FizzBuzz.java
+│   │   ├── Palindrome.java
+│   │   ├── QuadraticEquation.java
+│   │   ├── RomanNumeral.java
+│   │   └── ...
+│   │
+│   └── test/java/
+│       ├── LineCoverageTest/
+│       ├── BranchCoverageTest/
+│       └── ConditionCoverageTest/
+│
+├── pom.xml
+└── README.md
+```
 
-Dans cet exercice, les tests de couverture de branches et de couverture de conditions sont pratiquement identiques.
+---
 
-Exercice 2 — Anagram
-Bug détecté
+# ⚙️ Technologies Used
 
-Une erreur de condition était présente dans la boucle for de la méthode isAnagram :
+* ☕ Java
+* 🧪 JUnit
+* 📦 Maven
+* 💻 IntelliJ IDEA
+* 🌐 Git & GitHub
 
-Code incorrect :
+---
 
-for (int i = 0; i <= s1.length(); i++)
+# 🧪 Testing Categories
 
-Correction :
+## ✅ Line Coverage
 
-for (int i = 0; i < s1.length(); i++)
+Tests designed to execute every line of the source code.
 
-Cette erreur provoquait un dépassement d’indice (IndexOutOfBoundsException).
+## ✅ Branch Coverage
 
-Exercice 3 — BinarySearch
-Bugs détectés
-La condition de la boucle ne permettait pas de comparer le dernier élément lorsque low == high.
+Tests created to validate every decision branch in the program.
 
-Code incorrect :
+## ✅ Condition Coverage
 
-while (low < high)
+Tests used to evaluate all logical conditions independently.
 
-Correction :
+---
 
-while (low <= high)
-Une condition incorrecte était utilisée dans la comparaison :
+# ▶️ How to Run the Project
 
-Code incorrect :
+## 1️⃣ Clone the Repository
 
-array[mid] <= element
+```bash
+git clone https://github.com/khedrouchedjassem-cell/TP1.git
+```
 
-Si array[mid] == element, la méthode doit directement retourner mid.
+## 2️⃣ Open the Project
 
-Exercice 4 — QuadraticEquation
-Cas de tests réalisés
-a = 0 → lève une IllegalArgumentException
-delta < 0 → retourne null (aucune solution réelle)
-delta == 0 → retourne une seule racine réelle
-delta > 0 → retourne deux racines réelles
-Exercice 5 — RomanNumeral
-Bug détecté
+Open the project using:
 
-Une erreur était présente dans la condition de la boucle for.
+* IntelliJ IDEA
+* Eclipse
+* VS Code
 
-Code incorrect :
+---
 
-for (int i = 0; i <= symbols.length; i++)
+## 3️⃣ Run the Tests
 
-Correction :
+Using Maven:
 
-for (int i = 0; i < symbols.length; i++)
-Cas de tests réalisés
-Vérification des bornes (1 et 3999)
-Cas utilisant la notation soustractive (IV, IX, XL, etc.)
-Cas avec répétitions autorisées (III, XXX)
-Vérification des exceptions lorsque :
-n < 1
-n > 3999
+```bash
+mvn test
+```
+
+Or directly from your IDE.
+
+---
+
+# 📊 Objectives of the Project
+
+* Practice Java programming
+* Understand software testing strategies
+* Improve code reliability
+* Learn automated testing with JUnit
+* Apply software quality concepts
+
+---
+
+# 👨‍💻 Author
+
+## Djassem Khedrouche
+
+* GitHub: [https://github.com/khedrouchedjassem-cell](https://github.com/khedrouchedjassem-cell)
+
+---
+
+# ⭐ Repository
+
+If you find this project useful, feel free to:
+
+* ⭐ Star the repository
+* 🍴 Fork the project
+* 🛠️ Contribute improvements
+
+---
+
+# 📄 License
+
+This project is developed for educational purposes.
