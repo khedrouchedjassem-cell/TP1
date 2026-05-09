@@ -1,129 +1,58 @@
-# 🚀 TP1 — Java Testing & Coverage Project
+## TP1 - Tests Unitaires JUnit5
 
-## 📌 Overview
+###  Bugs trouvés
 
-This project contains a collection of Java exercises and automated tests focused on:
+**Exo1 - Classe `Palindrome`**
+- Bug dans la boucle `while`: les indices `i` et `j` sont mal mis à jour (`i--` au lieu de `i++` et `j++` au lieu de `j--`).
+- Problème corrigé dans `Exo1Correction.java`.
 
-* Line Coverage
-* Branch Coverage
-* Condition Coverage
-* Algorithm validation
-* Unit testing practices
+### Tests similaires
+- Les tests  pour la couverture de branches et de conditions sont similaires dans cet exercice.
 
-The project was developed using Java and Maven in order to demonstrate different software testing techniques and code quality verification.
 
----
 
-# 📂 Project Structure
 
-```text
-TP1/
-│
-├── src/
-│   ├── main/java/org/example/
-│   │   ├── Anagram.java
-│   │   ├── BinarySearch.java
-│   │   ├── FizzBuzz.java
-│   │   ├── Palindrome.java
-│   │   ├── QuadraticEquation.java
-│   │   ├── RomanNumeral.java
-│   │   └── ...
-│   │
-│   └── test/java/
-│       ├── LineCoverageTest/
-│       ├── BranchCoverageTest/
-│       └── ConditionCoverageTest/
-│
-├── pom.xml
-└── README.md
-```
+## Exercice 2 - Anagram
 
----
+###  Bug trouvé
+Une erreur a été trouvée dans la méthode `isAnagram` :
 
-# ⚙️ Technologies Used
+for (int i = 0; i <= s1.length(); i++) 
 
-* ☕ Java
-* 🧪 JUnit
-* 📦 Maven
-* 💻 IntelliJ IDEA
-* 🌐 Git & GitHub
 
----
+## Exercice 3 - BinarySearch
 
-# 🧪 Testing Categories
+###  Bug trouvé
 
-## ✅ Line Coverage
 
-Tests designed to execute every line of the source code.
 
-## ✅ Branch Coverage
+Il ignore la comparaison finale entre low et high quand ils sont égaux. Il faut utiliser while (low <= high).
 
-Tests created to validate every decision branch in the program.
+De plus, la condition array[mid] <= element est fausse, car si array[mid] == element, on doit déjà avoir retourné mid
 
-## ✅ Condition Coverage
+## Exercice 4 - QuadraticEquation
 
-Tests used to evaluate all logical conditions independently.
 
----
+### Cas testés :
 
-# ▶️ How to Run the Project
+-  `a = 0` → lève une `IllegalArgumentException`
+-  `delta < 0` → renvoie `null` (pas de solution réelle)
+-  `delta == 0` → une racine réelle
+- `delta > 0` → deux racines réelles
 
-## 1️⃣ Clone the Repository
+## Exercice 5 - RomanNumeral
 
-```bash
-git clone https://github.com/khedrouchedjassem-cell/TP1.git
-```
+La boucle for contient une erreur :
+for (int i = 0; i <= symbols.length; i++) {
+devrait être :
 
-## 2️⃣ Open the Project
+for (int i = 0; i < symbols.length; i++) {
 
-Open the project using:
+### Cas testés :
 
-* IntelliJ IDEA
-* Eclipse
-* VS Code
+-  Vérification des bornes (1, 3999)
+-  Cas avec soustraction (IV, IX, XL, etc.)
+- Répétition autorisée (III, XXX)
+- Erreurs si n < 1 ou n > 3999
 
----
 
-## 3️⃣ Run the Tests
-
-Using Maven:
-
-```bash
-mvn test
-```
-
-Or directly from your IDE.
-
----
-
-# 📊 Objectives of the Project
-
-* Practice Java programming
-* Understand software testing strategies
-* Improve code reliability
-* Learn automated testing with JUnit
-* Apply software quality concepts
-
----
-
-# 👨‍💻 Author
-
-## Djassem Khedrouche
-
-* GitHub: [https://github.com/khedrouchedjassem-cell](https://github.com/khedrouchedjassem-cell)
-
----
-
-# ⭐ Repository
-
-If you find this project useful, feel free to:
-
-* ⭐ Star the repository
-* 🍴 Fork the project
-* 🛠️ Contribute improvements
-
----
-
-# 📄 License
-
-This project is developed for educational purposes.
